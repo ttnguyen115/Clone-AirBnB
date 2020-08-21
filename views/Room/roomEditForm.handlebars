@@ -1,0 +1,30 @@
+<div class="errors">
+    {{#each errors}}
+        <p>{{this}}</p>
+    {{/each}}
+</div>
+
+<form action="/user/edit/{{room._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+    <h2>Change Room Form</h2>
+    <label>Room Title</label>
+    <input type="text" name="roomTitle" id="roomTitle" value="{{room.roomTitle}}"> <br> <br>
+
+    <label>Price</label>
+    <input type="text" name="price" id="price" value="{{room.price}}"><br> <br>
+
+    <label>Description</label>
+    <input name="description" id="description" value="{{room.description}}"></input><br><br>
+
+    <label>Location</label>
+    <input name="location" id="location" value="{{room.location}}"></textarea><br><br>
+
+    <input type="file" name="roomImg"><br><br>
+
+    <input type="submit" value="Edit Room"><br>
+</form>
+
+<div class="editImg">
+    <p>Your current room image:</p>
+    <img src="/uploads/{{room.roomImg}}" alt="room.title">
+</div>
+

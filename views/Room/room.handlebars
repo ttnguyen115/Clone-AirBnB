@@ -1,0 +1,19 @@
+<section class="roomList">
+    {{#each room}}
+        <div class="room">
+            <ul class="roomPicture">
+                <li class="grey"><img src="/uploads/{{this.roomImg}}" alt="Room"></li>
+                <li class="grey"><a href="#" class="btn btn-outline-info">{{this.roomTitle}} <br> {{this.description}} <br> {{this.location}}
+                <br> ${{this.price}} CAD/night</a></li>
+            </ul>
+        
+        {{#if ../user}}
+            <ul><form action="/user/booking/{{this._id}}" method="GET">
+                <input type="submit" value="Book this room">
+            </form></ul>
+        {{else}}
+            <div><a href="/user/login">Please log in</a></div>
+        {{/if}}
+        </div>
+    {{/each}}
+</section>

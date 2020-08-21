@@ -1,0 +1,24 @@
+<div class="myrooms">
+    <ul>
+        <h2>Here is your rooms</h2>
+        {{#each room}}
+            <li>
+                <div>
+                    <p>Room Title:          {{this.roomTitle}}</p>
+                    <p>Room Price:          {{this.price}}</p>
+                    <p>Room Description:    {{this.price}}</p>
+                    <p>Room Location:       {{this.location}}</p>
+                    <div><img src="/uploads/{{this.roomImg}}" alt="{{this.title}}"></div>
+                </div>
+              
+                <form action="/room/book" method="POST">
+                    <input type="hidden" value="{{this._id}}" name="book">
+                    <input type="hidden" value="{{user._id}}" name="id_u">
+                    <input type="submit" value="Search">
+                </form>
+            </li>
+        {{else}}
+            <h2>No rooms in your profile right now</h2>
+        {{/each}}
+    </ul>
+</div>

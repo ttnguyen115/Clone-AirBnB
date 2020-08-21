@@ -1,0 +1,24 @@
+{{#each errors}}
+    <div class="errors">{{this}}</div>
+{{/each}}
+
+<div><h1>Administrator Module</h1></div>
+<h2>Welcome {{user.firstName}} {{user.lastName}}</h2>
+
+<form method="POST" action="/user/add" enctype="multipart/form-data" class="form-container">
+    <label>Room Title</label>
+    <input type="text" name="roomTitle" id="roomTitle"> <br> <br>
+
+    <label>Price</label>
+    <input type="text" name="price" id="price"><br> <br>
+
+    <label>Description</label>
+    <input name="description" id="description"></input><br><br>
+
+    <label>Location</label>
+    <input name="location" id="location"></input><br><br>
+
+    <input type="file" name="roomImg"><br><br>
+
+    <input type="submit" value="Add Room" class="btn signup"><br>
+</form>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> AirBnB</title>
+    <!--Tittle icon-->
+    <link rel="icon" type="image/gif" href="../airbnb-icon.png" />
+    <!--Link Bootrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Link Font Awsome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/registration.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/promotion.css">
+    <link rel="stylesheet" href="/css/room.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar ">
+            <div class="d-flex flex-row bd-highlight mb-3">
+                <a href="/" class="navbar-brand"><i class="fab fa-airbnb fa-2x"></i></a>
+            </div>
+
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <a href="/" class="navlink">Home</a>
+                <a href="/room" class="navlink" onclick="myFunction()">Room List</a>
+                {{#if user}}
+                {{!-- <a href="/profile" class="navlink">My Account</a> --}}
+                <a href="/user/logout" class="navlink">Log Out</a>
+                {{else}}
+                <a href="/user/login" class="navlink">Login</a>
+                <a href="/user/registration" class="navlink">Registration</a>
+                {{/if}}
+            </div>
+
+        </nav>
+
+        <div class="bookingForm">
+            <form action="/room" method="GET" class="form-container">
+                <h2>Book unique places to stay and things to do.</h2>
+
+                <label><b>Where</b></label>
+                <select name="locations" id="locations">
+                    <option selected disabled>Choose Anywhere</option>
+                    <option value="Canada">Canada</option>
+                    <option value="USA">USA</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="China">China</option>
+                    <option value="France">France</option>
+                </select>  
+
+                <div class="dateInputs">
+                    <label><b>Check-in</b></label>
+                    <label><b>Checkout</b></label>
+                    <input type="date" placeholder="dd-mm-yyyy">
+                    <input type="date" placeholder="dd-mm-yyyy">
+                </div>
+
+                <label for="psw"><b>Guests</b></label>
+                <br>
+                <select>
+                    <option value="1 guest">1 guest</option>
+                    <option value="2 guests">2 guest</option>
+                    <option value="3 guests">3 guest</option>
+                    <option value="4 guests">4 guest</option>
+
+                </select>
+
+                <button type="submit" class="btn search" onclick="closeForm()">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        {{{body}}}
+    </main>
+    <section class="promotion">
+        <div class="columns">
+            <ul class="price">
+                <li class="header">Explore a new city in Asia</li>
+                <li class="grey">Average $100 CAD/night</li>
+                <li class="grey"><a href="/user/registration" class="button">Explore</a></li>
+            </ul>
+        </div>
+
+        <div class="columns">
+            <ul class="price">
+                <li class="header">Stay with a Superhost</li>
+                <li class="grey">Make yourself at home</li>
+                <li class="grey"><a href="/user/registration" class="button">Contact</a></li>
+        </div>
+
+        <div class="columns">
+            <ul class="price">
+                <li class="header">Tropical Destinations</li>
+                <li class="grey">Warm-weather locals</li>
+                <li class="grey"><a href="/user/registration" class="button">Pre-order</a></li>
+            </ul>
+        </div>
+
+    </section>
+
+    {{>footer}}
+    {{!-- <footer id="footer">
+        <div class="container">
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="/"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="/"><i class="fa fa-angle-double-right"></i>About</a></li>
+                        <li><a href="/"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                        <li><a href="/"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/"><i
+                                    class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com/"><i
+                                    class="fa fa-instagram"></i></a></li>
+                </div>
+                </hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p class="h6"> &copy All right Reversed.<a class="text-green ml-2" </p> </div> </hr> </div> </div>
+                            </footer> --}}
+                             </body> </html>

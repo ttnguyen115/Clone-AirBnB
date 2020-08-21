@@ -1,0 +1,23 @@
+<h2>Welcome {{user.firstName}} {{user.lastName}}</h2>
+
+<div><a href="/room"> Click here to check the room list</a></div>
+<h3>Your Booked Room</h3>
+<section class="user-container">
+    <div>
+        <p>First Name   : {{user.firstName}}</p>
+        <p>Last Name    : {{user.lastName}}</p>
+        <p>Email        : {{user.email}}</p>
+        <p>DoB          : {{user.dob}}</p>
+        <a href="/user/logout">Log out</a><br><br>
+       
+        {{#each books}}
+            <div class="room">
+            <ul class="roomPicture">
+                <li class="grey"><img src="/uploads/{{this.roomImg}}" alt="Room Type 1"></li>
+                <li class="grey"><a href="#" class="btn btn-outline-info">{{this.roomTitle}} - {{this.description}} - {{this.location}}
+                <br> ${{this.price}} CAD/night</a></li>
+            </ul>
+            </div>
+        {{/each}}
+    </div>
+</section>

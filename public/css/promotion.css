@@ -1,0 +1,53 @@
+.promotion{
+    display:  grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: monospace;
+    position: initial;
+}
+  
+.columns {
+    
+    padding: 10px;
+}
+  
+.price {
+    list-style-type: none;
+    border: 1px solid white;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+  
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+  
+.price .header{
+    background-image: red;
+    font-size: 15px;
+}
+  
+.price li{
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+  
+.price > .grey > a{
+    text-decoration: none;
+}
+  
+.price .grey {
+    background-color: white;
+    color: red;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .promotion{
+        display: block;
+        font-family: monospace;
+        
+    }
+}

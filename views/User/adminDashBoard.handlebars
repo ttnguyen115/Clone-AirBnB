@@ -1,0 +1,18 @@
+<h1>Administrator Mode</h1>
+<h2>Welcome {{user.firstName}} {{user.lastName}}</h2>
+
+<section class="roomList">
+    {{#each room}}
+        <div class="room">
+            <ul class="roomPicture">
+                <li class="grey"><img src="/uploads/{{this.roomImg}}" alt="Room"></li>
+                <li class="grey"><a href="#" class="btn btn-outline-info">{{this.roomTitle}} <br> {{this.description}} <br> {{this.location}}
+                <br> ${{this.price}} CAD/night</a></li>
+            </ul>
+            <ul><a href="/user/edit/{{this._id}}">Edit</a></ul>
+        </div>
+    {{/each}}
+</section>
+
+{{!-- <div><a href="/room">Room List</a></div><br><br><br> --}}
+<div><a href="/user/add">Create a Room</a></div>
